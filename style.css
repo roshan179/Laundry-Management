@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Titillium+Web:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+  /* color: white; */
+}
+body {
+  background: #457b9d;
+}
+
+.input__div {
+  color: white;
+}
+
+/* NAVBAR STARTS HERE ########################## */
+nav {
+  display: flex;
+  background: #1d3557;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid black; */
+  height: 5rem;
+}
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.nav__logo {
+  margin-left: 1rem;
+  height: 4rem;
+  width: 4rem;
+  /* display: inline-block; */
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NAVBAR BUTTONS ############################## */
+ul li a {
+  margin-right: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  background-color: whitesmoke;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: black;
+}
+
+.user {
+  color: white;
+  margin-left: 1rem;
+}
+/* NAVBAR ENDS HERE ###################### */
+
+.big__container {
+  width: 100%;
+  /* height: 100%; */
+  margin-top: 3rem;
+  /* border: 2px solid red; */
+}
+
+/* FORM ######################## */
+.cloth_count_form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  /* border: 1px solid black; */
+  background: #1d3557;
+  border-radius: 0.5rem;
+  box-shadow: 3px 10px 25px 5px rgba(0, 0, 0, 0.15),
+    0px 10px 15px 5px rgba(0, 0, 0, 0.15);
+}
+
+select {
+  color: black;
+}
+.form__title {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+}
+.input__div {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 1rem;
+}
+.cloth__entry {
+  width: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: black;
+}
+.cloth__entry:hover {
+  width: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  background: rgb(238, 100, 100);
+  transform: scale(1.1);
+}
+
+.clothCat {
+  text-decoration: underline;
+  /* color: white; */
+}
+.form__title {
+  color: white;
+}
+.container {
+  margin: auto;
+  height: 100%;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: #1d3557;
+  text-align: center;
+  margin-top: 120px;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 5px solid red; */
+}
+.table-data {
+  border: 2px solid white;
+  border-collapse: collapse;
+  margin: auto;
+  position: inherit;
+  margin-right: 2rem;
+}
+th {
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+td {
+  text-align: center;
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+.rec-head {
+  padding-bottom: 20px;
+}
+/* .user {
+  left: 20px;
+} */
+.money {
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+  /* top: 475px; */
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  position: fixed;
+  /* bottom: 0;
+  right: 15px; */
+  /* border: 3px solid #f1f1f1; */
+  z-index: 9;
+  color: white;
+  margin: auto;
+  transform: translate(50%, -114%);
+  height: 30rem;
+  width: 50%;
+  display: none;
+}
+.form-popup h1 {
+  text-align: center;
+}
+
+/* Add styles to the form container */
+.form-container {
+  /* display: none; */
+  /* max-width: 300px; */
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #1d3557;
+}
+#details {
+  resize: none;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  /* width: 100%; */
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.box {
+  text-align: center;
+  margin-top: 20px;
+  /* font-size: 150%; */
+}
+.opt {
+  padding: 20px;
+  margin: 20px;
+}
