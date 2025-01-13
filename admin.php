@@ -28,18 +28,19 @@
     //   $bal = $bal + $data['TOTAL'];
     // }
     //ticket details
-    $tick = mysqli_query($conn, "SELECT date,subject,query,status FROM tickets where username = '$user'");
-    if($result== true){
-    if ($tick->num_rows > 0) {
-      $x = mysqli_fetch_all($tick, MYSQLI_ASSOC);
-      $ticket = $x;
-  } else {
-      $ticket= "No Data Found"; 
-  }
+    // Fetch ticket details
+    $tick = mysqli_query($conn, "SELECT date, subject, query, status FROM tickets WHERE username = '$user'");
+    $ticket = []; // Initialize as an empty array
+    
+    if ($tick == true) {
+        if ($tick->num_rows > 0) {
+            $ticket = mysqli_fetch_all($tick, MYSQLI_ASSOC);
+        }
+        // No "else" needed because the default is an empty array
+    } else {
+        $ticket_error = mysqli_error($conn); // Store the error for debugging (optional)
     }
-  else{
-    $ticket= mysqli_error($conn);
-    }
+
 
 
   ?>
@@ -150,26 +151,30 @@
          
         </thead>
         <tbody>
-          <?php
-          if(is_array($ticket)){      
-            $sn=1;
-            foreach($ticket as $data){
-              ?>
+        <?php
+        if (!empty($ticket)) { // Check if tickets exist
+            $sn = 1;
+            foreach ($ticket as $data) {
+                ?>
         <tr>
-          <td><?php echo $data['date']??''; ?></td>
-          <td><?php echo $data['subject']??''; ?></td>
-          <td><?php echo $data['query']??''; ?></td>
-          <td><?php echo $data['status']??''; ?></td>
-          <td><a href="update.php">FINISH</a></td>
+            <td><?php echo $data['date'] ?? ''; ?></td>
+            <td><?php echo $data['subject'] ?? ''; ?></td>
+            <td><?php echo $data['query'] ?? ''; ?></td>
+            <td><?php echo $data['status'] ?? ''; ?></td>
+            <td><a href="update.php">FINISH</a></td>
         </tr>
-        <?php $sn++;}}else{ ?>
-          <tr>
-            <td colspan="8">
-              <?php echo $msg; ?>
-            </td>
-          </tr>
-          <?php
-      }?>
+        <?php 
+                $sn++;
+            }
+        } else { 
+        ?>
+        <tr>
+            <td colspan="5">No Tickets Found for this user.</td> <!-- Display a friendly message -->
+        </tr>
+        <?php 
+        }
+        ?>
+
       </tbody>
     </table>
   </div>
