@@ -1,6 +1,13 @@
 <?php
   session_start();
   include 'config.php';
+
+  // Check if the session variable 'username' is set
+  if (!isset($_SESSION['username'])) {
+      // If the session is not active, redirect to login.php
+      header("Location: login_project.php");
+      exit(); // Stop further execution of the script
+  }
   if(isset($_SESSION['username']))
   {
     $username = $_SESSION["username"];
